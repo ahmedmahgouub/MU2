@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # 🟢 الحل الذكي: توليد ملف الـ Wrapper Jar الناقص تلقائياً على نسخة 8.7 الشاملة
+    # 🟢 توليد ملف الـ Wrapper Jar الناقص تلقائياً على نسخة 8.7 الشاملة
     - name: Auto-generate missing Gradle Wrapper Jar
       run: |
         GRADLEW_PATH=$(find . -name "gradlew" -print -quit)
@@ -40,6 +40,16 @@ jobs:
           chmod +x "$GRADLEW_PATH"
         else
           exit 1
+        fi
+
+    # 🟢 الخطوة القاطعة الفورية: مسح وتطهير الكاش القديم من السيرفر كلياً قبل البناء
+    - name: Clean Project Cache
+      run: |
+        GRADLEW_PATH=$(find . -name "gradlew" -print -quit)
+        if [ ! -z "$GRADLEW_PATH" ]; then
+          MODULE_DIR=$(dirname "$GRADLEW_PATH")
+          cd "$MODULE_DIR"
+          ./gradlew clean
         fi
 
     # 🟢 تجميع الـ APK النظيف
