@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://android.com"
     package="com.muhgoub.hud">
 
-    <!-- صلاحيات النافذة العائمة والخدمات الأمامية للنسخة المستقرة الأصلية -->
+    <!-- صلاحيات النافذة العائمة والخدمات الأمامية للنسخة المستقرة الأصيلة -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -20,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hud">
         
-        <!-- واجهة التشغيل الرئيسية للرادار المطابقة لملف MainActivity.kt القديم -->
+        <!-- واجهة التشغيل الرئيسية للرادار المطابقة لملف MainActivity القديم -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -30,12 +30,13 @@
             </intent-filter>
         </activity>
 
+        <!-- واجهة السبراش المتوافقة مع السورس الأصلي -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Hud.NoActionBar" />
 
-        <!-- 🟢 التطابق التام: تم تغيير النوع لـ dataSync لتتوافق مع أندرويد 13 وتنسف خطأ specialUse للأبد -->
+        <!-- الخدمة العائمة والرسومات المصلحة بالكامل لنسخة أندرويد 13 بسلام -->
         <service
             android:name=".OverlayService"
             android:enabled="true"
