@@ -4,15 +4,24 @@ plugins {
 }
 
 android {
+    // 🟢 اسم الحزمة مطابق 100% لملفات الكوتلن الأصلية في السورس
     namespace 'com.muhgoub.hud'
-    compileSdk 34
+    compileSdk 33 // 🟢 تنزيل إصدار التجميع لحماية المحرك
 
     defaultConfig {
         applicationId "com.muhgoub.hud"
-        minSdk 26
-        targetSdk 34
+        minSdk 24
+        targetSdk 33 // 🟢 تثبيت الإصدار المستهدف على أندرويد 13 الفولاذي
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++17"
+                arguments "-DANDROID_STL=c++_shared"
+                abiFilters "arm64-v8a"
+            }
+        }
     }
 
     buildTypes {
@@ -21,24 +30,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.18.1"
+        }
+    }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
-
+    
     kotlinOptions {
-        jvmTarget = '17'
-    }
-
-    buildFeatures {
-        viewBinding true
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.13.1'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
 }
