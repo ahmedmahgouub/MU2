@@ -1,47 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://android.com"
+    package="com.muhgoub.hud">
 
-    <!-- Overlay window (draw over other apps) -->
+    <!-- صلاحيات النافذة العائمة والخدمات الأمامية للنسخة المستقرة الأصلية -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-    <!-- Foreground service to keep the floating panel alive -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!-- Vibration feedback on toggle -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    
-    <!-- Network & Connectivity stats -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!-- Flashlight toggle -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
-
-    <!-- Bluetooth toggle -->
-    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
-    <!-- Brightness / settings control -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions" />
+    <!-- تخطي حظر الـ PID وقراءة العمليات للعبة -->
+    <queries>
+        <package android:name="com.tencent.ig" />
+    </queries>
 
     <application
-        android:name=".HudApp"
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MuhgoubHUD">
-
+        android:theme="@style/Theme.Hud">
+        
+        <!-- واجهة التشغيل الرئيسية للرادار المطابقة لملف MainActivity.kt القديم -->
         <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MuhgoubHUD.Splash">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -49,18 +31,16 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:launchMode="singleTop" />
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Hud.NoActionBar" />
 
+        <!-- 🟢 التطابق التام: تم تغيير النوع لـ dataSync لتتوافق مع أندرويد 13 وتنسف خطأ specialUse للأبد -->
         <service
             android:name=".OverlayService"
+            android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="specialUse">
-            <property
-                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="floating_quick_toggle_panel" />
-        </service>
-
+            android:foregroundServiceType="dataSync" />
     </application>
+
 </manifest>
