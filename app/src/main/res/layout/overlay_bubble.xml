@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="66dp"
+    android:layout_height="66dp"
+    android:background="@drawable/bg_bubble"
+    android:elevation="8dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/bubbleIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_shield" />
+
+</FrameLayout>

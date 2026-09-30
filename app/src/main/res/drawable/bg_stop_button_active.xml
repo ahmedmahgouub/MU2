@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- شكل زرار "إيقاف القائمة" وقت الفلاش الأحمر (أول ما المستخدم يدوس عليه)،
+     بنفس شكل وزوايا bg_main_button (الزرار الأزرق بتاع تشغيل لوحة التحكم)
+     لكن بلون أحمر يدل على التوقف. بيفضل ظاهر لمدة ثانيتين بس (اتحكم في المدة
+     دي من MainActivity.kt) وبعدين يرجع الزرار للونه الأصلي تاني. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/stop_red" />
+    <corners android:radius="14dp" />
+</shape>

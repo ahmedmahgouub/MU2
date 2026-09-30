@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- صف أداة داخل القائمة: شكل "شريحة" (chip) بخلفية بتتغير حسب حالة التفعيل
+         (bg_toggle_on الأخضر لو مفعّل / bg_toggle_off الرمادي لو مقفول)، بدل
+         الخلفية الشفافة القديمة. الخلفية بتتغير فعليًا في applyToggleStyle()
+         داخل OverlayService.kt عشان تتزامن مع حالة كل زرار.
+         layout_gravity="fill_horizontal" ضروري عشان الزرار ياخد عرض العمود
+         كامل جوه GridLayout. بعد ما عرض القائمة اتزوّد لـ 6 سم، رجّعنا الحشو
+         وحجم الخط لمساحة مريحة (كانوا اتقلّلوا قبل كده وقت ما كانت القائمة
+         4 سم بس عشان محتاجين نلحّق كل حاجة في مساحة أضيق). -->
+    <style name="HudToggleButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:background">@drawable/bg_toggle_off</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+
+    <!-- نفس شكل الشريحة (chip) بتاع الأزرار اللي فوق، لكن بألوان القسم ده:
+         bg_segment_filled (لون مميّز) لما يكون محدد، bg_segment_outline
+         (برواز بس) لما يكون مش محدد. النص بيتنسق لونه تلقائي حسب الحالة
+         عن طريق color/radio_text_color.xml، وشكل الدائرة القديم اتشال
+         (android:button="@null") عشان يبقى شكله زي شرايح التفعيل بالظبط. -->
+    <style name="HudRadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/segment_background_selector</item>
+        <item name="android:textColor">@color/radio_text_color</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

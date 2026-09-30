@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- يتحكم في خلفية أزرار المحاذاة والحالة: bg_segment_filled لما يكون
+     الزرار محدد (checked)، وbg_segment_outline لما يكون مش محدد. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:drawable="@drawable/bg_segment_filled" />
+    <item android:state_checked="false" android:drawable="@drawable/bg_segment_outline" />
+</selector>

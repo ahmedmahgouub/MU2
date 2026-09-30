@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="pure_black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="bg_dark">#FF0A0A0A</color>
+    <color name="surface_dark">#FF161616</color>
+    <color name="surface_dark_light">#FF232323</color>
+
+    <color name="shield_blue">#FF2196F3</color>
+    <color name="shield_blue_dark">#FF1565C0</color>
+
+    <color name="neon_green">#FF39FF14</color>
+    <color name="neon_green_dark">#FF25CC0A</color>
+
+    <color name="toggle_off">#FF2A2A2A</color>
+    <color name="toggle_off_border">#FF3D3D3D</color>
+
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFA0A0A0</color>
+
+    <color name="accent">#FF2196F3</color>
+
+    <!-- New "system check" dashboard palette -->
+    <color name="teal_accent">#FF2FD8CE</color>
+    <color name="action_blue">#FF4B9FD6</color>
+    <color name="action_blue_dark">#FF3E86B5</color>
+    <color name="circle_border_grey">#FF4A4E52</color>
+    <color name="card_bg">#FF1B1E21</color>
+    <color name="divider_line">#33FFFFFF</color>
+    <color name="nav_bg">#FFF2F2F2</color>
+    <color name="nav_icon_inactive">#FF8A8F94</color>
+
+    <!-- Checklist-style overlay panel -->
+    <color name="check_green">#FF34C77A</color>
+    <color name="checkbox_border">#FF5A5F63</color>
+
+    <!-- لون فلاش التأكيد بتاع زرار "إيقاف القائمة" لمدة ثانيتين بعد الضغط عليه -->
+    <color name="stop_red">#FFE53935</color>
+
+    <!-- Aliases used by activity_main.xml (main dashboard screen) -->
+    <color name="cyan_accent">#FF2FD8CE</color>
+    <color name="icon_circle_gray">#FF4A4E52</color>
+    <color name="start_blue">#FF4B9FD6</color>
+
+</resources>

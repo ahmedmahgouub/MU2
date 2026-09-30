@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- شكل الشريحة المحددة (checked): خلفية ملونة بلون التمييز teal_accent
+     من غير حدود، عشان تتفرق بصريًا عن bg_segment_outline (غير المحددة). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/teal_accent" />
+    <corners android:radius="12dp" />
+</shape>

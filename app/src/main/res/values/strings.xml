@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MUHGOUB</string>
+    <string name="splash_name">MUHGOUB</string>
+
+    <string name="btn_launch_panel">تشغيل لوحة التحكم</string>
+    <string name="btn_stop_panel">إيقاف القائمة</string>
+    <string name="btn_grant_permission">إعطاء الصلاحية</string>
+    <string name="label_overlay_permission">صلاحية العرض فوق التطبيقات</string>
+
+    <string name="toast_enabled">تم التفعيل</string>
+    <string name="toast_disabled">تم القفل</string>
+
+    <string name="need_overlay_permission">يجب منح صلاحية العرض فوق التطبيقات الأخرى أولاً</string>
+    <string name="panel_running">لوحة التحكم تعمل الآن</string>
+    <string name="panel_stopped">تم إيقاف لوحة التحكم</string>
+    <string name="panel_already_stopped">لوحة التحكم متوقفة أصلاً</string>
+
+    <string name="section_core_align">Core Alignment</string>
+    <string name="section_status">Status</string>
+
+    <string name="tool_ping">Ping</string>
+    <string name="tool_signal">Signal</string>
+    <string name="tool_data">Data</string>
+    <string name="tool_bandwidth">Bandwth</string>
+    <string name="tool_packets">Packets</string>
+    <string name="tool_core">Core</string>
+    <string name="tool_wifi">Wi-Fi</string>
+    <string name="tool_bt_link">BT Link</string>
+    <string name="tool_bluetooth">BT</string>
+    <string name="tool_flashlight">Flash</string>
+    <string name="tool_hotspot">Hotspot</string>
+    <string name="tool_light">Light</string>
+    <string name="tool_dark_mode">Dark Mod</string>
+    <string name="tool_active">Active</string>
+
+    <string name="align_bottom">Bot</string>
+    <string name="align_mid">Mid</string>
+    <string name="align_top">Top</string>
+    <string name="align_off">Off</string>
+
+    <string name="status_prcs">Prcs</string>
+    <string name="status_fill">Fill</string>
+    <string name="status_off">Off</string>
+
+    <string name="close_panel">إغلاق</string>
+    <string name="bluetooth_open_settings">افتح إعدادات البلوتوث لإيقافه (أندرويد الحديث لا يسمح بالإيقاف المباشر من التطبيقات)</string>
+    <string name="mode_normal">الوضع العادي</string>
+    <string name="mode_turbo">الوضع الفائق</string>
+</resources>

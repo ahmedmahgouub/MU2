@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/panelRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_panel">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+    <FrameLayout
+        android:id="@+id/dragHandle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_shield" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <View
+                android:id="@+id/statusDot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_icon_circle_accent" />
+
+            <ImageButton
+                android:id="@+id/btnMinimize"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/close_panel"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- شبكة أزرار الأدوات الـ 12 الأساسية -->
+    <GridLayout
+        android:id="@+id/gridTools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="6">
+
+        <Button android:id="@+id/btnTool0" style="@style/HudToggleButton" android:text="إطار الأعداء" />
+        <Button android:id="@+id/btnTool1" style="@style/HudToggleButton" android:text="شريط الصحة" />
+        <Button android:id="@+id/btnTool2" style="@style/HudToggleButton" android:text="أسماء اللاعبين" />
+        <Button android:id="@+id/btnTool3" style="@style/HudToggleButton" android:text="المسافة" />
+        <Button android:id="@+id/btnTool4" style="@style/HudToggleButton" android:text="الهيكل العظمي" />
+        <Button android:id="@+id/btnTool5" style="@style/HudToggleButton" android:text="نقطة الرأس" />
+        <Button android:id="@+id/btnTool6" style="@style/HudToggleButton" android:text="السلاح المستخدم" />
+        <Button android:id="@+id/btnTool7" style="@style/HudToggleButton" android:text="خطوط الرادار" />
+        <Button android:id="@+id/btnTool8" style="@style/HudToggleButton" android:text="تحذير القنابل" />
+        <Button android:id="@+id/btnTool9" style="@style/HudToggleButton" android:text="تنبيه الحواف" />
+        <Button android:id="@+id/btnTool10" style="@style/HudToggleButton" android:text="رقم الفريق" />
+        <Button android:id="@+id/btnTool11" style="@style/HudToggleButton" android:text="عدد الاعداء" />
+
+    </GridLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:background="#22FFFFFF" />
+
+    <!-- قسم Bounding box (3 خيارات جمب بعض) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bounding box"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radioBoundingBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/rbBoxPrecise" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Precise" />
+        <RadioButton android:id="@+id/rbBoxFilled" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Filled" />
+        <RadioButton android:id="@+id/rbBoxOff" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Off" />
+
+    </RadioGroup>
+
+    <!-- قسم Radar line (4 خيارات جمب بعض) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Radar line"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/radioRadarLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/rbRadarBottom" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Bottom" />
+        <RadioButton android:id="@+id/rbRadarCenter" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Center" />
+        <RadioButton android:id="@+id/rbRadarTop" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Top" />
+        <RadioButton android:id="@+id/rbRadarOff" style="@style/HudRadioButton" android:layout_width="0dp" android:layout_weight="1" android:text="Off" />
+
+    </RadioGroup>
+
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>

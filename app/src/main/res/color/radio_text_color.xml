@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- لون نص أزرار المحاذاة والحالة: غامق لما تكون الشريحة محددة (خلفية فاتحة
+     bg_segment_filled)، ورمادي فاتح لما تكون مش محددة (خلفية شفافة برواز فقط). -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/bg_dark" android:state_checked="true" />
+    <item android:color="@color/text_secondary" android:state_checked="false" />
+</selector>
