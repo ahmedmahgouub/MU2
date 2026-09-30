@@ -4,14 +4,13 @@ plugins {
 }
 
 android {
-    // 🟢 اسم الحزمة مطابق 100% لملفات الكوتلن الأصلية في السورس
     namespace 'com.muhgoub.hud'
-    compileSdk 33 // 🟢 تنزيل إصدار التجميع لحماية المحرك
+    compileSdk 33 // تثبيت إصدار التجميع المستقر للحماية
 
     defaultConfig {
         applicationId "com.muhgoub.hud"
         minSdk 24
-        targetSdk 33 // 🟢 تثبيت الإصدار المستهدف على أندرويد 13 الفولاذي
+        targetSdk 33 // تثبيت إصدار التوافق على أندرويد 13 لتخطي جدار أندرويد 16 الحركي
         versionCode 1
         versionName "1.0"
 
@@ -34,7 +33,7 @@ android {
     externalNativeBuild {
         cmake {
             path "src/main/cpp/CMakeLists.txt"
-            version "3.18.1"
+            // 🟢 تم إزالة سطر تثبيت نسخة الـ CMake القديمة لكي يستعمل السيرفر نسخته الحديثة تلقائياً بدون تعليق
         }
     }
 
